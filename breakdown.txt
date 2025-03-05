@@ -1,1 +1,2 @@
-Self notes. 
+line 4 - The subprocess module is part of Python's standard library, meaning it is built into Python and does not require any external libraries to be installed. 
+You can use it directly without needing to install any additional packages.
