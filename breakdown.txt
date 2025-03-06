@@ -1,14 +1,36 @@
-(everything withj st. is self explanatory)
+(everything with st. is self explanatory)
 
-line 4 - The subprocess module is part of Python's standard library, meaning it is built into Python and does not require any external libraries to be installed. 
-You can use it directly without needing to install any additional packages.
-later used in the below. 
+_____________________________
 
-def run_python_script(script_path):
-    """Run an external Python script using a specified Python interpreter."""
+def load_model():
+    """Load the Ollama model with error handling."""
     try:
-        result = subprocess.run([PYTHON_PATH, script_path], capture_output=True, text=True)
-        return result.stdout if result.returncode == 0 else result.stderr
+        return OllamaLLM(model="llama3")  # Ensure Ollama is running
     except Exception as e:
-        return f"Error executing script: {e}"
+        st.error(f"Error loading AI model: {e}")
+        return None
 
+
+so ' return OllamaLLM(model="llama3")' this line runs the llm ?
+
+/
+
+Yes! ✅  
+
+The line:  
+```python
+return OllamaLLM(model="llama3")
+```
+**Runs the LLM** by:  
+1. **Initializing** the Ollama model named `"llama3"`.  
+2. **Returning** an instance of `OllamaLLM`, which can process inputs using `invoke()`.  
+3. **Ensuring** that Ollama is running locally.  
+
+If Ollama is **not running**, this line will **fail** and raise an exception. That’s why we use a `try-except` block to handle errors gracefully. 🚀
+
+-----------------------------
+
+The OllamaLLM class comes from the langchain_ollama library, which is an integration of LangChain with Ollama (a local AI model runner).
+
+-----------------------------
+22
