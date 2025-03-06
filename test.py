@@ -68,13 +68,6 @@ def chat_with_ai(user_input, knowledge_content):
         st.error(f"Error generating AI response: {e}")
         return "An error occurred while generating the response."
 
-def run_python_script(script_path):
-    """Run an external Python script using a specified Python interpreter."""
-    try:
-        result = subprocess.run([PYTHON_PATH, script_path], capture_output=True, text=True)
-        return result.stdout if result.returncode == 0 else result.stderr
-    except Exception as e:
-        return f"Error executing script: {e}"
 
 # UI Components
 st.title("🤖 Local AI Chatbot")
