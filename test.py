@@ -1,7 +1,6 @@
 import streamlit as st
 from langchain_ollama import OllamaLLM
 from datetime import datetime
-import subprocess
 
 # Streamlit UI setup
 st.set_page_config(page_title="AI Chatbot", page_icon="🤖", layout="wide")
