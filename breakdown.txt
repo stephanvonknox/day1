@@ -1,2 +1,14 @@
+(everything withj st. is self explanatory)
+
 line 4 - The subprocess module is part of Python's standard library, meaning it is built into Python and does not require any external libraries to be installed. 
 You can use it directly without needing to install any additional packages.
+later used in the below. 
+
+def run_python_script(script_path):
+    """Run an external Python script using a specified Python interpreter."""
+    try:
+        result = subprocess.run([PYTHON_PATH, script_path], capture_output=True, text=True)
+        return result.stdout if result.returncode == 0 else result.stderr
+    except Exception as e:
+        return f"Error executing script: {e}"
+

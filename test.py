@@ -9,7 +9,6 @@ st.set_page_config(page_title="AI Chatbot", page_icon="🤖", layout="wide")
 # Constants
 LOG_FILE = "chat_log.txt"
 KNOWLEDGE_FILE = "knowledge.txt"
-PYTHON_PATH = "C:/Users/Altair/AppData/Local/Programs/Python/Python311/python.exe"
 
 # Load local AI model with error handling
 def load_model():
